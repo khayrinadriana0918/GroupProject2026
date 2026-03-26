@@ -66,21 +66,6 @@ public class CaseReader
                 analyst.addIncident(incident);
 
             }
-            
-                            // Inside the try block, after reading all lines
-                for (AnalystInfo a : analystList) {
-                    System.out.println("Analyst ID: " + a.getAnalystId());
-                    System.out.println("Name: " + a.getAnalystName());
-                    System.out.println("Expertise: " + a.getExpertiseArea());
-
-                    for (IncidentInfo i : a.getIncidents()) {
-                        System.out.println("   Incident ID: " + i.getIncidentId());
-                        System.out.println("   Type: " + i.getIncidentType());
-                    }
-
-                    System.out.println("-----------------------------------");
-                }
-
                 System.out.println("All analysts in the list:");
                 for (AnalystInfo b : analystList) {
                     System.out.println(b.getAnalystId() + " - " + b.getAnalystName());
