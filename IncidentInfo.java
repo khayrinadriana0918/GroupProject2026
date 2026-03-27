@@ -22,6 +22,7 @@ public class IncidentInfo
         this.estimatedResolutionTime = estimatedResolutionTime;
         this.impactCost = impactCost;
     }
+    //for queue display
     public String getIncidentId() { 
         return incidentId; 
     }
@@ -34,7 +35,7 @@ public class IncidentInfo
     public String getReportDate() {
         return reportDate; 
     }
-    public String getERT() { //estimatedResolutionTime
+    public String getERT() { //ERT = estimatedResolutionTime
         return estimatedResolutionTime; 
     }
     public double getImpactCost() {
