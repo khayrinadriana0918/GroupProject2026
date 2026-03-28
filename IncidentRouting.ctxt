@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=IncidentRouting
+comment1.params=analystList
+comment1.target=IncidentRouting(java.util.List)
+comment2.params=
+comment2.target=void\ routeAnalysts()
+comment3.params=
+comment3.target=void\ displayQueues()
+comment4.params=queue
+comment4.target=void\ displayQueueDetails(java.util.Queue)
+comment5.params=
+comment5.target=java.util.Queue\ getInternalQueue()
+comment6.params=
+comment6.target=java.util.Queue\ getExternalQueue()
+comment7.params=
+comment7.target=java.util.Queue\ getCriticalQueue()
+numComments=8
