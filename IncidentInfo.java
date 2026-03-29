@@ -1,20 +1,20 @@
-
 /**
- * Write a description of class IncidentInfo here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * IncidentInfo Class - Stores incident details
+ * SWC3684 Project - Cybersecurity Incident Response System
  */
 public class IncidentInfo
 {
     private String incidentId;
     private String incidentType;
-    private int severityLevel; 
+    private int severityLevel;
     private String reportDate;
-    private String estimatedResolutionTime;
+    private int estimatedResolutionTime;
     private double impactCost;
     
-    public IncidentInfo(String incidentId,String incidentType,int severityLevel,String reportDate,String estimatedResolutionTime,double impactCost){
+    // Constructor
+    public IncidentInfo(String incidentId, String incidentType, int severityLevel, 
+                        String reportDate, int estimatedResolutionTime, double impactCost)
+    {
         this.incidentId = incidentId;
         this.incidentType = incidentType;
         this.severityLevel = severityLevel;
@@ -22,23 +22,19 @@ public class IncidentInfo
         this.estimatedResolutionTime = estimatedResolutionTime;
         this.impactCost = impactCost;
     }
-    //for queue display
-    public String getIncidentId() { 
-        return incidentId; 
-    }
-    public String getIncidentType() {
-        return incidentType; 
-    }
-    public int getSeverityLevel() {
-        return severityLevel; 
-    }
-    public String getReportDate() {
-        return reportDate; 
-    }
-    public String getERT() { //ERT = estimatedResolutionTime
-        return estimatedResolutionTime; 
-    }
-    public double getImpactCost() {
-        return impactCost; 
+    
+    // Getter methods
+    public String getIncidentId() { return incidentId; }
+    public String getIncidentType() { return incidentType; }
+    public int getSeverityLevel() { return severityLevel; }
+    public String getReportDate() { return reportDate; }
+    public int getEstimatedResolutionTime() { return estimatedResolutionTime; }
+    public double getImpactCost() { return impactCost; }
+    
+    // Display incident details
+    public String toString()
+    {
+        return incidentId + " | " + incidentType + " | Severity: " + severityLevel + 
+               " | RM " + String.format("%,.2f", impactCost);
     }
 }
