@@ -1,49 +1,57 @@
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Write a description of class AnalystInfo here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * AnalystInfo Class - Stores analyst information and their assigned incidents
+ * SWC3684 Project - Cybersecurity Incident Response System
+ * HAS-A relationship with IncidentInfo
  */
-import java.util.*;
-public class AnalystInfo{
+public class AnalystInfo
+{
     private String analystId;
     private String analystName;
     private String expertiseArea;
-    private List<IncidentInfo> incidents;
-
-    public AnalystInfo(String analystId,String analystName,String expertiseArea){
+    private List<IncidentInfo> incidents;  // HAS-A relationship
+    private double totalResolvedImpact;
+    
+    // Constructor
+    public AnalystInfo(String analystId, String analystName, String expertiseArea)
+    {
         this.analystId = analystId;
         this.analystName = analystName;
         this.expertiseArea = expertiseArea;
-        this.incidents = new LinkedList<>();
+        this.incidents = new ArrayList<>();
+        this.totalResolvedImpact = 0.0;
     }
-
-    public void addIncident(IncidentInfo incident) { 
-        incidents.add(incident); 
+    
+    // Getter methods
+    public String getAnalystId() { return analystId; }
+    public String getAnalystName() { return analystName; }
+    public String getExpertiseArea() { return expertiseArea; }
+    public List<IncidentInfo> getIncidents() { return incidents; }
+    public double getTotalResolvedImpact() { return totalResolvedImpact; }
+    
+    // Setter for total resolved impact
+    public void setTotalResolvedImpact(double total)
+    {
+        this.totalResolvedImpact = total;
     }
-
-    public String getAnalystId(){
-        return analystId;
+    
+    // Add incident to analyst
+    public void addIncident(IncidentInfo incident)
+    {
+        incidents.add(incident);
     }
-
-    public String getAnalystName(){ //for queue display
-        return analystName;
+    
+    // Get number of incidents assigned
+    public int getIncidentCount()
+    {
+        return incidents.size();
     }
-
-    public String getExpertiseArea(){ //for queue display
-        return expertiseArea;
-    }
-
-    public List<IncidentInfo> getIncidents(){
-        return incidents;
-    }
-    //requirement for queue display
-    public double getTotalImpactCost(){
-        double total = 0;
-        for(IncidentInfo i: incidents){
-            total += i.getImpactCost();
-        }
-        return total;
+    
+    // Display analyst info
+    public String toString()
+    {
+        return analystName + " (" + analystId + ") - " + incidents.size() + " incidents";
     }
 }
